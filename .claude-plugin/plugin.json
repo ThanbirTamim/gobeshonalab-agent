@@ -1,0 +1,18 @@
+{
+  "name": "gobeshonalab-agent",
+  "version": "0.1.0",
+  "description": "Open-source AI research agent toolkit for evidence-based academic writing and reproducible research. From Research Ideas to Evidence-Backed Papers.",
+  "author": {
+    "name": "GobeshonaLabAgent contributors"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/gobeshonalab/gobeshonalab-agent",
+  "keywords": [
+    "research",
+    "academic-writing",
+    "reproducibility",
+    "citation-integrity",
+    "scientific-manuscript",
+    "ai-research-agent"
+  ]
+}

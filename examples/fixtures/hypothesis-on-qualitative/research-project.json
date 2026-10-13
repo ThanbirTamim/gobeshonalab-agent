@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "1.0.0",
+  "project": { "title": "Hypothesis Forced Onto Qualitative Study", "discipline": "humanities", "researchType": "qualitative", "citationStyle": "Chicago" },
+  "research": {
+    "concept": "An exploratory qualitative study that incorrectly declares a confirmatory hypothesis.",
+    "problemStatement": "Testing the hypothesis-vs-research-question rule.",
+    "hypothesis": "Reading novel X increases empathy by 10%.",
+    "researchQuestions": [ { "id": "RQ1", "text": "How do readers describe changes in perspective after reading novel X?" } ],
+    "objectives": ["Explore reader perspectives."],
+    "contributions": [ { "text": "An interpretive account of reader perspective shifts.", "type": "novelty" } ]
+  },
+  "sources": [ { "id": "ref1", "title": "Reader-Response Theory (synthetic)", "authors": ["A. Critic"], "year": 2015 } ],
+  "sectionSources": { "introduction": ["ref1"] }
+}

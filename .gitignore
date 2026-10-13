@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+dist/
+dist-tests/
+*.tsbuildinfo
+
+# Python working env
+.venv/
+__pycache__/
+*.pyc
+
+# PRIVATE: unpublished-source extraction, derived notes, and working material.
+# NEVER commit any of this to the public repository.
+.work/
+.private/
+*.pdf
+private-source/
+
+# Logs / OS
+*.log
+.DS_Store
+npm-debug.log*
+
+# Test / build output
+coverage/
+.tmp/
+examples/output/
+
+# Editor
+.vscode/
+.idea/
+
+# Agent / tool artifacts
+.pi/
+.pi-subagents/

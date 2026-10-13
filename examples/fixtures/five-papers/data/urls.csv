@@ -1,0 +1,9 @@
+url,label
+http://example-bank-login.verify-account.co/secure,phish
+https://www.realbank.com/login,benign
+http://paypal.com.security-check.ru/update,phish
+https://mail.example.edu,benign
+http://192.168.0.1/wp-admin/verify.php,phish
+https://docs.python.org/3/,benign
+http://free-giftcard-now.click/claim,phish
+https://en.wikipedia.org/wiki/Phishing,benign

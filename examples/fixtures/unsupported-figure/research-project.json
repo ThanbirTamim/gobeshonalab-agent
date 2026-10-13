@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0.0",
+  "project": { "title": "Unsupported Figure + Unknown Section Source", "discipline": "economics", "researchType": "quantitative", "citationStyle": "APA" },
+  "research": {
+    "concept": "A study with a quantitative figure lacking data provenance and a section citing a missing source.",
+    "problemStatement": "Testing figure-provenance and unknown-source detection.",
+    "hypothesis": "Policy P reduces metric M.",
+    "researchQuestions": [ { "id": "RQ1", "text": "Does policy P reduce metric M?" } ],
+    "objectives": ["Estimate the effect of P on M."],
+    "contributions": [ { "text": "An estimate of the effect of P on M.", "type": "empirical-evidence" } ]
+  },
+  "sources": [ { "id": "real2020", "title": "A Real Source (synthetic)", "authors": ["R. Author"], "year": 2020 } ],
+  "sectionSources": {
+    "introduction": ["real2020"],
+    "results": ["ghost2099"]
+  },
+  "figures": [
+    { "id": "fig1-effect", "kind": "quantitative", "purpose": "Show the estimated effect of P on M.", "supportsClaim": "P reduces M.", "dataSource": null }
+  ]
+}

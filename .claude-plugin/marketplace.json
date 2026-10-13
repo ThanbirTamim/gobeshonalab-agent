@@ -1,0 +1,36 @@
+{
+  "name": "gobeshonalab-agent",
+  "owner": {
+    "name": "GobeshonaLabAgent contributors"
+  },
+  "metadata": {
+    "description": "Open-source AI research agent toolkit for evidence-based academic writing and reproducible research.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "gobeshonalab-agent",
+      "description": "Complete toolkit: an orchestrator plus 15 focused skills covering research design, paper ingestion, source mapping, writing, methodology, implementation, experiments, results, figures, discussion, references, assembly, and final review.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/writing-guidelines",
+        "./skills/paper-ingestion",
+        "./skills/source-mapping",
+        "./skills/research-design",
+        "./skills/introduction-writer",
+        "./skills/literature-review",
+        "./skills/methodology-designer",
+        "./skills/implementation-engineer",
+        "./skills/experiment-runner",
+        "./skills/results-analyst",
+        "./skills/figure-planner",
+        "./skills/discussion-conclusion",
+        "./skills/reference-auditor",
+        "./skills/manuscript-assembler",
+        "./skills/final-reviewer",
+        "./skills/research-paper-workflow"
+      ]
+    }
+  ]
+}

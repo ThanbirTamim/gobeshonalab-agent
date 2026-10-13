@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "1.0.0",
+  "project": { "title": "Qualitative Study Needing No Code or Equations", "discipline": "sociology", "researchType": "qualitative", "targetVenue": "Synthetic Journal of Qualitative Inquiry", "venueType": "journal", "citationStyle": "APA", "timeBudget": "1 year" },
+  "research": {
+    "concept": "How first-generation university students describe belonging during their first semester.",
+    "problemStatement": "Belonging shapes retention, but first-generation students' own accounts of belonging in the first semester are under-studied in this regional context.",
+    "hypothesis": null,
+    "researchQuestions": [
+      { "id": "RQ1", "text": "How do first-generation students describe moments of belonging and exclusion in their first semester?", "feasible": true, "novel": true, "significant": true, "specific": true }
+    ],
+    "objectives": [
+      "Collect first-person accounts via semi-structured interviews.",
+      "Develop themes through reflexive thematic analysis."
+    ],
+    "contributions": [
+      { "text": "A thematic framework describing first-semester belonging for first-generation students in this context.", "type": "novelty" }
+    ],
+    "researchGap": {
+      "statement": "Prior work measures retention quantitatively but rarely captures students' own accounts of belonging in this region.",
+      "type": "unexplored-domain",
+      "supportingSources": ["belong2018", "firstgen2020"]
+    }
+  },
+  "sources": [
+    { "id": "belong2018", "title": "Belonging and Retention (synthetic)", "authors": ["B. One"], "year": 2018, "verificationStatus": "verified" },
+    { "id": "firstgen2020", "title": "First-Generation Student Experience (synthetic)", "authors": ["F. Two"], "year": 2020, "verificationStatus": "verified" }
+  ],
+  "sectionSources": {
+    "introduction": ["belong2018", "firstgen2020"],
+    "literature-review": ["belong2018", "firstgen2020"],
+    "methodology": ["firstgen2020"]
+  },
+  "datasets": [
+    { "id": "interviews", "path": "examples/fixtures/qualitative-study/data/transcripts/", "description": "De-identified interview transcripts.", "permission": "authorized", "containsHumanSubjects": true, "irbApproval": "synthetic-IRB-2024-001" }
+  ],
+  "implementation": { "required": false },
+  "experiments": { "required": false },
+  "limitations": [
+    "Single institution; findings are transferable, not generalizable.",
+    "Researcher positionality may shape interpretation."
+  ]
+}

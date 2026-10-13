@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0.0",
+  "project": { "title": "Duplicate Source Scenario", "discipline": "computer-science", "researchType": "computational", "citationStyle": "IEEE" },
+  "research": {
+    "concept": "A study where the same paper was accidentally supplied twice.",
+    "problemStatement": "Testing duplicate-source detection.",
+    "hypothesis": "Model A beats model B on dataset D.",
+    "researchQuestions": [ { "id": "RQ1", "text": "Does A beat B on D?" } ],
+    "objectives": ["Compare A and B."],
+    "contributions": [ { "text": "Empirical comparison of A and B.", "type": "empirical-evidence" } ]
+  },
+  "sources": [
+    { "id": "doe2020", "title": "Important Prior Work (synthetic)", "authors": ["J. Doe"], "year": 2020, "doi": "10.0000/synthetic.doe2020" },
+    { "id": "doe2020", "title": "Important Prior Work (synthetic)", "authors": ["J. Doe"], "year": 2020, "doi": "10.0000/synthetic.doe2020" }
+  ],
+  "sectionSources": { "introduction": ["doe2020"] }
+}

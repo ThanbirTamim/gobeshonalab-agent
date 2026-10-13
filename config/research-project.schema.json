@@ -1,0 +1,218 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/gobeshonalab/gobeshonalab-agent/config/research-project.schema.json",
+  "title": "Research Project Configuration",
+  "description": "Researcher-driven contract that drives the GobeshonaLabAgent toolkit. The researcher owns every field here; skills must never silently invent or change research framing, results, or the permitted source set.",
+  "type": "object",
+  "required": ["project", "research", "sources", "sectionSources"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "description": "Version of this configuration contract.",
+      "default": "1.0.0"
+    },
+    "project": {
+      "type": "object",
+      "required": ["title", "discipline", "researchType"],
+      "additionalProperties": false,
+      "properties": {
+        "title": { "type": "string", "minLength": 3 },
+        "discipline": { "type": "string", "description": "e.g. computer-science, medicine, sociology, economics, humanities" },
+        "researchType": {
+          "type": "string",
+          "enum": ["conceptual", "theoretical", "qualitative", "quantitative", "mixed-methods", "review", "computational"],
+          "description": "Determines which skills and quality gates apply (e.g. hypothesis required only for confirmatory quantitative work)."
+        },
+        "targetVenue": { "type": "string", "description": "Journal or conference name (free text)." },
+        "venueType": { "type": "string", "enum": ["journal", "conference", "preprint", "thesis", "unknown"] },
+        "citationStyle": { "type": "string", "description": "e.g. IEEE, APA, Vancouver, ACM, Chicago." },
+        "outputFormat": { "type": "string", "enum": ["markdown", "latex"], "default": "markdown" },
+        "timeBudget": { "type": "string", "description": "e.g. '1 year (Master's thesis)'. Used to sanity-check scope." }
+      }
+    },
+    "research": {
+      "type": "object",
+      "required": ["concept", "problemStatement", "researchQuestions", "objectives", "contributions"],
+      "additionalProperties": false,
+      "properties": {
+        "concept": { "type": "string", "minLength": 10 },
+        "problemStatement": { "type": "string", "minLength": 10 },
+        "hypothesis": {
+          "type": ["string", "null"],
+          "description": "Required ONLY for confirmatory quantitative work. Null/absent is valid (and expected) for qualitative/exploratory/conceptual studies."
+        },
+        "researchQuestions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["id", "text"],
+            "additionalProperties": false,
+            "properties": {
+              "id": { "type": "string", "pattern": "^RQ[0-9]+$" },
+              "text": { "type": "string", "minLength": 5 },
+              "feasible": { "type": "boolean" },
+              "novel": { "type": "boolean" },
+              "significant": { "type": "boolean" },
+              "specific": { "type": "boolean" }
+            }
+          }
+        },
+        "objectives": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "contributions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["text", "type"],
+            "additionalProperties": false,
+            "properties": {
+              "text": { "type": "string" },
+              "type": { "type": "string", "enum": ["novelty", "empirical-evidence", "practical-value"] }
+            }
+          }
+        },
+        "researchGap": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "statement": { "type": "string" },
+            "type": {
+              "type": "string",
+              "enum": ["missing-knowledge", "inconsistent-findings", "methodological-limitation", "unexplored-domain", "missing-comparison", "scalability", "robustness", "reproducibility", "practical-deployment"]
+            },
+            "supportingSources": { "type": "array", "items": { "type": "string" }, "description": "sourceId values that evidence the gap." }
+          }
+        },
+        "literatureSearch": {
+          "type": "object",
+          "description": "Documented search strategy; required before any claim of comprehensive coverage.",
+          "additionalProperties": false,
+          "properties": {
+            "databases": { "type": "array", "items": { "type": "string" } },
+            "queryTerms": { "type": "array", "items": { "type": "string" } },
+            "dateRange": { "type": "string" },
+            "inclusionCriteria": { "type": "array", "items": { "type": "string" } },
+            "exclusionCriteria": { "type": "array", "items": { "type": "string" } },
+            "claimsComprehensiveCoverage": { "type": "boolean", "default": false }
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "description": "The permitted source set. Skills must not use sources outside this list.",
+      "items": {
+        "type": "object",
+        "required": ["id", "title"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "description": "Stable local identifier, e.g. 'smith2021phishing'." },
+          "title": { "type": "string" },
+          "authors": { "type": "array", "items": { "type": "string" } },
+          "year": { "type": ["integer", "null"] },
+          "venue": { "type": ["string", "null"] },
+          "doi": { "type": ["string", "null"] },
+          "url": { "type": ["string", "null"] },
+          "localPath": { "type": ["string", "null"], "description": "Path to a locally stored copy (PDF/text) the researcher is authorized to use." },
+          "metadataComplete": { "type": "boolean", "default": true },
+          "verificationStatus": {
+            "type": "string",
+            "enum": ["verified", "unverified", "unverifiable"],
+            "default": "unverified",
+            "description": "Set to 'verified' only after metadata is confirmed against a reliable source."
+          },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "sectionSources": {
+      "type": "object",
+      "description": "Explicit source-to-section assignment. Keys are manuscript section names; values are arrays of source ids permitted for that section.",
+      "additionalProperties": {
+        "type": "array",
+        "items": { "type": "string" }
+      }
+    },
+    "datasets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "path"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "path": { "type": "string" },
+          "description": { "type": "string" },
+          "license": { "type": "string" },
+          "permission": { "type": "string", "enum": ["authorized", "restricted", "unknown"], "default": "unknown" },
+          "containsHumanSubjects": { "type": "boolean", "default": false },
+          "irbApproval": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "implementation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "required": { "type": "boolean", "default": false },
+        "existingCodePaths": { "type": "array", "items": { "type": "string" } },
+        "language": { "type": "string" },
+        "dependencies": { "type": "array", "items": { "type": "string" } },
+        "hardware": { "type": "string" },
+        "runtimeNotes": { "type": "string" }
+      }
+    },
+    "experiments": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "required": { "type": "boolean", "default": false },
+        "baselines": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "kind"],
+            "additionalProperties": false,
+            "properties": {
+              "name": { "type": "string" },
+              "kind": { "type": "string", "enum": ["classic-simple", "recent-sota"] },
+              "sourceId": { "type": ["string", "null"] }
+            }
+          }
+        },
+        "metrics": { "type": "array", "items": { "type": "string" } },
+        "datasetSplit": { "type": "string" },
+        "randomSeeds": { "type": "array", "items": { "type": "integer" } },
+        "runs": { "type": "integer", "minimum": 1 },
+        "constraints": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "figures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "kind", "purpose"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^(fig|FIG)[0-9A-Za-z_-]+$" },
+          "kind": { "type": "string", "enum": ["conceptual", "quantitative"] },
+          "purpose": { "type": "string" },
+          "supportsClaim": { "type": "string" },
+          "dataSource": { "type": ["string", "null"], "description": "datasetId or result-file path for quantitative figures; null for conceptual." }
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Known limitations and unresolved decisions declared up front by the researcher."
+    },
+    "openDecisions": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Explicitly unresolved choices the researcher wants flagged, not silently decided."
+    }
+  }
+}

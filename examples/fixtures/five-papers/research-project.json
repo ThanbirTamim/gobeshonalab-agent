@@ -1,0 +1,91 @@
+{
+  "schemaVersion": "1.0.0",
+  "project": {
+    "title": "Lightweight URL-Based Phishing Detection for Real-Time Browser Use",
+    "discipline": "computer-science",
+    "researchType": "computational",
+    "targetVenue": "Example Workshop on Web Security (synthetic)",
+    "venueType": "conference",
+    "citationStyle": "IEEE",
+    "outputFormat": "markdown",
+    "timeBudget": "1 year (Master's thesis)"
+  },
+  "research": {
+    "concept": "Detect phishing websites from URL lexical features fast enough to run inside a browser.",
+    "problemStatement": "Accurate ML phishing detectors are often too heavy to run in real time inside a browser, leaving a gap between accuracy and efficiency.",
+    "hypothesis": "A Random Forest using only URL lexical features achieves F1 within 2 points of a heavier CNN baseline while using at least 50% less inference compute.",
+    "researchQuestions": [
+      { "id": "RQ1", "text": "Can URL lexical features alone match a heavier model's F1 on a public phishing dataset?", "feasible": true, "novel": true, "significant": true, "specific": true },
+      { "id": "RQ2", "text": "What is the inference-time cost difference between the lightweight and heavy models?", "feasible": true, "novel": true, "significant": true, "specific": true }
+    ],
+    "objectives": [
+      "Assemble a reproducible URL lexical feature set.",
+      "Compare a lightweight model against a classic and a recent baseline on the same split.",
+      "Measure accuracy and inference cost together."
+    ],
+    "contributions": [
+      { "text": "A lightweight URL lexical feature set achieving comparable F1 with substantially less inference compute.", "type": "novelty" },
+      { "text": "An empirical accuracy-vs-efficiency comparison on a public dataset under one fixed split.", "type": "empirical-evidence" }
+    ],
+    "researchGap": {
+      "statement": "Existing accurate detectors are too heavy for real-time browser use; the accuracy-vs-efficiency trade-off for URL-only features is under-measured.",
+      "type": "practical-deployment",
+      "supportingSources": ["doe2020mlphish", "lee2022deepurl"]
+    },
+    "literatureSearch": {
+      "databases": ["example-index"],
+      "queryTerms": ["phishing detection", "URL features", "lightweight model"],
+      "dateRange": "2018-2023",
+      "inclusionCriteria": ["peer-reviewed", "reports F1 on a public dataset"],
+      "exclusionCriteria": ["no reproducible dataset"],
+      "claimsComprehensiveCoverage": false
+    }
+  },
+  "sources": [
+    { "id": "doe2020mlphish", "title": "Machine Learning Approaches to Phishing Detection (synthetic)", "authors": ["J. Doe", "A. Roe"], "year": 2020, "venue": "Synthetic Journal of Web Security", "doi": "10.0000/synthetic.doe2020", "verificationStatus": "verified", "metadataComplete": true },
+    { "id": "smith2019rulebased", "title": "Rule-Based Phishing Filters: Strengths and Limits (synthetic)", "authors": ["R. Smith"], "year": 2019, "venue": "Synthetic Security Letters", "doi": "10.0000/synthetic.smith2019", "verificationStatus": "verified", "metadataComplete": true },
+    { "id": "lee2022deepurl", "title": "Deep URL Representations for Phishing (synthetic)", "authors": ["K. Lee", "M. Park"], "year": 2022, "venue": "Synthetic Conf on Learning", "doi": "10.0000/synthetic.lee2022", "verificationStatus": "verified", "metadataComplete": true },
+    { "id": "garcia2021dataset", "title": "A Public Phishing URL Dataset (synthetic)", "authors": ["L. Garcia"], "year": 2021, "venue": "Synthetic Data Papers", "doi": "10.0000/synthetic.garcia2021", "verificationStatus": "verified", "metadataComplete": true },
+    { "id": "patel2023metrics", "title": "Choosing Metrics for Imbalanced Security Data (synthetic)", "authors": ["S. Patel"], "year": 2023, "venue": "Synthetic Evaluation Review", "doi": "10.0000/synthetic.patel2023", "verificationStatus": "verified", "metadataComplete": true }
+  ],
+  "sectionSources": {
+    "introduction": ["doe2020mlphish", "smith2019rulebased"],
+    "literature-review": ["doe2020mlphish", "smith2019rulebased", "lee2022deepurl"],
+    "methodology": ["garcia2021dataset", "patel2023metrics"],
+    "results": ["patel2023metrics"],
+    "discussion": ["lee2022deepurl", "doe2020mlphish"]
+  },
+  "datasets": [
+    { "id": "phish-urls", "path": "examples/fixtures/five-papers/data/urls.csv", "description": "Synthetic labelled phishing/benign URLs.", "license": "CC0-synthetic", "permission": "authorized", "containsHumanSubjects": false }
+  ],
+  "implementation": {
+    "required": true,
+    "language": "python",
+    "dependencies": ["scikit-learn"],
+    "hardware": "CPU only",
+    "runtimeNotes": "Must run on a laptop CPU."
+  },
+  "experiments": {
+    "required": true,
+    "baselines": [
+      { "name": "rule-based filter", "kind": "classic-simple", "sourceId": "smith2019rulebased" },
+      { "name": "deep URL CNN", "kind": "recent-sota", "sourceId": "lee2022deepurl" }
+    ],
+    "metrics": ["precision", "recall", "f1", "inference-ms-per-url"],
+    "datasetSplit": "70/15/15 stratified by label, entity = URL",
+    "randomSeeds": [0, 1, 2],
+    "runs": 3,
+    "constraints": ["no GPU", "inference must be < 5 ms/URL"]
+  },
+  "figures": [
+    { "id": "fig1-pipeline", "kind": "conceptual", "purpose": "Show the detection pipeline from URL to label.", "supportsClaim": "The method is simple and deployable.", "dataSource": null },
+    { "id": "fig2-f1-vs-cost", "kind": "quantitative", "purpose": "Plot F1 against inference cost for all models.", "supportsClaim": "Lightweight model trades little F1 for large cost savings.", "dataSource": "examples/fixtures/five-papers/results/metrics.json" }
+  ],
+  "limitations": [
+    "Single public dataset; results may not generalize to all phishing campaigns.",
+    "URL-only features ignore page content."
+  ],
+  "openDecisions": [
+    "Whether to add a second dataset before submission."
+  ]
+}

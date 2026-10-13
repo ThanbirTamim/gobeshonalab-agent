@@ -1,0 +1,59 @@
+{
+  "name": "@gobeshonalab/agent",
+  "version": "0.1.0",
+  "description": "Open-source AI research agent toolkit for evidence-based academic writing and reproducible research.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "bin": {
+    "gobeshona": "dist/cli/index.js"
+  },
+  "files": [
+    "dist/",
+    "skills/",
+    "knowledge/",
+    "config/",
+    "docs/",
+    ".claude-plugin/",
+    "LICENSE",
+    "LICENSE-CONTENT",
+    "NOTICE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepare": "npm run build",
+    "cli": "node dist/cli/index.js",
+    "list": "node dist/cli/index.js list",
+    "validate": "node dist/cli/index.js validate",
+    "doctor": "node dist/cli/index.js doctor",
+    "test": "npm run test:build && node --test \"dist-tests/tests/*.test.js\"",
+    "test:build": "tsc -p tsconfig.test.json",
+    "lint": "tsc -p tsconfig.json --noEmit"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "research",
+    "academic-writing",
+    "agent-skills",
+    "claude-code",
+    "reproducibility",
+    "scientific-manuscript",
+    "citation-integrity",
+    "ai-research-agent",
+    "gobeshonalab"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gobeshonalab/gobeshonalab-agent.git"
+  },
+  "homepage": "https://github.com/gobeshonalab/gobeshonalab-agent#readme",
+  "bugs": {
+    "url": "https://github.com/gobeshonalab/gobeshonalab-agent/issues"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "@types/node": "^20.0.0"
+  }
+}

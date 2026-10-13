@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0.0",
+  "project": { "title": "Incomplete and Unverifiable Metadata Scenario", "discipline": "sociology", "researchType": "qualitative", "citationStyle": "APA" },
+  "research": {
+    "concept": "A study using a paper whose metadata is incomplete and a reference that cannot be verified.",
+    "problemStatement": "Testing metadata and verification flagging.",
+    "hypothesis": null,
+    "researchQuestions": [ { "id": "RQ1", "text": "How do participants describe their experience of X?" } ],
+    "objectives": ["Understand lived experience of X."],
+    "contributions": [ { "text": "A thematic account of experiences of X.", "type": "empirical-evidence" } ]
+  },
+  "sources": [
+    { "id": "incomplete2021", "title": "A Paper With Missing Fields (synthetic)", "metadataComplete": false, "verificationStatus": "verified" },
+    { "id": "unverifiable2019", "title": "A Reference That Cannot Be Verified (synthetic)", "authors": ["Unknown"], "verificationStatus": "unverifiable" }
+  ],
+  "sectionSources": { "introduction": ["incomplete2021"], "literature-review": ["unverifiable2019"] }
+}
