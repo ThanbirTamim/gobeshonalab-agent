@@ -1,29 +1,33 @@
 # Publishing
 
-How to publish GobeshonaLabAgent to GitHub and npm yourself. **Nothing here has been published or
-pushed** — these are the exact steps and prerequisites for you to run.
+How to publish GobeshonaLabAgent to npm and cut a tagged release. **Current state:** the GitHub
+repository already exists and `main` is pushed at
+<https://github.com/ThanbirTamim/gobeshonalab-agent> with CI passing. **Not yet done:** no git tag
+(`v0.1.0`), no GitHub Release, and nothing published to npm. The steps below cover those remaining
+actions and their prerequisites — run them yourself.
 
 ## Naming decisions (confirm before publishing)
 
 | Item | Value | Status |
 |------|-------|--------|
 | Product name | `GobeshonaLabAgent` | chosen |
-| GitHub repo slug | `gobeshonalab-agent` (under org/user `gobeshonalab`) | **you must create** |
-| npm package | `@gobeshonalab/agent` | **not reserved/verified** — see below |
+| GitHub repo | `ThanbirTamim/gobeshonalab-agent` | created & pushed, CI passing |
+| npm package | `@gobeshonalab/agent` | **not published** (name is free; see scope note) |
 | CLI command | `gobeshona` | chosen (declared in `package.json` `bin`) |
 | Tagline | `From Research Ideas to Evidence-Backed Papers.` | chosen |
 
-The npm scope `@gobeshonalab` and package `@gobeshonalab/agent` are the project's **intended**
-identity. They are not reserved or published, and availability was not verified from this build
-environment. Before publishing, confirm availability and ownership:
+The npm package `@gobeshonalab/agent` is unpublished: `npm view @gobeshonalab/agent` returns 404 and
+no packages exist under the `@gobeshonalab` scope. **Scope-ownership note:** the GitHub owner is
+`ThanbirTamim`, but the package uses the `@gobeshonalab` npm scope. A scoped package can only be
+published if that scope is your npm **username** or an npm **org** you belong to. Before publishing,
+either create/join the `gobeshonalab` npm org, or change `name` in `package.json` to a scope you own
+(e.g. `@thanbirtamim/gobeshonalab-agent` or an unscoped name). Confirm with:
 
 ```bash
-npm view @gobeshonalab/agent          # 404 => name is free (or you lack access)
+npm view @gobeshonalab/agent          # 404 => name is free
+npm whoami                            # your npm username
 npm org ls gobeshonalab 2>/dev/null   # confirms you own/belong to the scope
 ```
-
-If the scope is unavailable or you do not own it, change `name` in `package.json` (and references in
-docs) to a scope you control, or an unscoped name you can claim, before publishing.
 
 ## Pre-flight checklist (private-content safe-release)
 
@@ -54,21 +58,19 @@ Inspect the `npm pack --dry-run` file list: it must contain only `dist/`, `skill
 `package.json` — and **must not** contain `.private/`, `.work/`, `*.pdf`, `tests/`, `src/`, or
 `node_modules/`. (The `files` allowlist in `package.json` enforces this.)
 
-## GitHub publication
+## GitHub release (repo already pushed)
+
+`main` is already on GitHub with CI green, so only the tag and Release remain:
 
 ```bash
-# Create the repo on github.com (org or personal), then:
-git remote add origin https://github.com/gobeshonalab/gobeshonalab-agent.git
-git branch -M main
-git push -u origin main
-
-# Tag a release
 git tag -a v0.1.0 -m "GobeshonaLabAgent 0.1.0"
 git push origin v0.1.0
 ```
 
-CI (`.github/workflows/ci.yml`) runs lint/typecheck, tests, and skill validation on push and PRs.
-Create a GitHub Release from the `v0.1.0` tag and paste the `CHANGELOG.md` entry.
+Then create a GitHub Release from the `v0.1.0` tag and paste the `CHANGELOG.md` entry. CI
+(`.github/workflows/ci.yml`) runs lint/typecheck, build, tests, and skill validation on push and PRs.
+
+> If you ever need to re-point the remote: `git remote set-url origin https://github.com/ThanbirTamim/gobeshonalab-agent.git`
 
 ## npm publication
 
@@ -95,8 +97,9 @@ Update `CHANGELOG.md` for every release.
 
 ## What requires your credentials / approval
 
-- Creating the GitHub repository and pushing (your GitHub account).
-- Reserving the npm scope `@gobeshonalab` and publishing (your npm account + `npm login`).
-- Deciding the final package name if `@gobeshonalab/agent` is unavailable.
+- Creating the `v0.1.0` tag + GitHub Release (your GitHub account).
+- Publishing to npm: an npm account, ownership of the chosen scope, and `npm login` (your npm account).
+- Deciding the final package name/scope if you do not own `@gobeshonalab`.
 
-Do not expect any of these to have happened automatically — they have not.
+The repository and `main` branch are already pushed; tagging, the Release, and npm publish have **not**
+happened and will not happen automatically.

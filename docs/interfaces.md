@@ -8,7 +8,7 @@ the skill content is the same portable Markdown in every case.
 Install the whole toolkit as a Claude Code plugin from this GitHub repository:
 
 ```
-/plugin marketplace add gobeshonalab/gobeshonalab-agent
+/plugin marketplace add ThanbirTamim/gobeshonalab-agent
 /plugin install gobeshonalab-agent@gobeshonalab-agent
 ```
 

@@ -1,5 +1,8 @@
 # GobeshonaLabAgent
 
+[![CI](https://github.com/ThanbirTamim/gobeshonalab-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/ThanbirTamim/gobeshonalab-agent/actions/workflows/ci.yml)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](./LICENSE)
+
 > **From Research Ideas to Evidence-Backed Papers.**
 >
 > Open-source AI research agent toolkit for evidence-based academic writing and reproducible research.
@@ -36,7 +39,7 @@ computational research. **Experiments are optional.**
 ## Quick start
 
 ```bash
-git clone https://github.com/gobeshonalab/gobeshonalab-agent
+git clone https://github.com/ThanbirTamim/gobeshonalab-agent
 cd gobeshonalab-agent
 npm install && npm run build
 

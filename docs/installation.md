@@ -8,7 +8,7 @@ GobeshonaLabAgent works at two layers: the **portable skills** (just Markdown fi
 Add this repository as a plugin marketplace, then install the plugin:
 
 ```
-/plugin marketplace add gobeshonalab/gobeshonalab-agent
+/plugin marketplace add ThanbirTamim/gobeshonalab-agent
 /plugin install gobeshonalab-agent@gobeshonalab-agent
 ```
 
@@ -24,7 +24,7 @@ the methodology for my project config."*
 ## Option B — Install skills with the CLI (any agent project)
 
 ```bash
-git clone https://github.com/gobeshonalab/gobeshonalab-agent
+git clone https://github.com/ThanbirTamim/gobeshonalab-agent
 cd gobeshonalab-agent
 npm install && npm run build
 

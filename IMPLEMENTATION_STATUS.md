@@ -3,15 +3,15 @@
 Project: **GobeshonaLabAgent** — Open-source AI research agent toolkit for evidence-based academic
 writing and reproducible research. Tagline: *From Research Ideas to Evidence-Backed Papers.*
 
-Last updated: rebranding + release-readiness pass.
+Last updated: release-readiness pass (repo pushed, CI green, URLs corrected to `ThanbirTamim`).
 
 ## Identity
 
 | Item | Value |
 |------|-------|
 | Product name | GobeshonaLabAgent |
-| GitHub repo slug | `gobeshonalab-agent` (org/user `gobeshonalab`) — not yet created/pushed |
-| npm package | `@gobeshonalab/agent` — **intended**, not reserved/published/verified |
+| GitHub repo | `ThanbirTamim/gobeshonalab-agent` — pushed to `main`, CI passing |
+| npm package | `@gobeshonalab/agent` — **not published** (404 = free); scope ownership must be arranged |
 | CLI command | `gobeshona` (`package.json` `bin`) |
 | Plugin + marketplace name | `gobeshonalab-agent` |
 
@@ -49,8 +49,10 @@ Last updated: rebranding + release-readiness pass.
 | `gobeshona doctor` | all checks pass |
 | `gobeshona new` → `validate` (first-time flow) | pass |
 | `install` dry-run / overwrite-protection / path-traversal | pass (unit-tested) |
-| `npm pack --dry-run` | reviewed; only intended files included |
+| `npm pack --dry-run` | reviewed; 62 files, only intended files included |
 | Private-source identifier scan of tracked files | clean (0 matches) |
+| GitHub Actions CI (latest run, commit `0811e89`) | **success** (Node 18/20/22) |
+| Stale `gobeshonalab/gobeshonalab-agent` URL scan | clean (0 matches; all point to `ThanbirTamim`) |
 
 ## Not implemented / roadmap
 
@@ -64,14 +66,24 @@ Last updated: rebranding + release-readiness pass.
 
 ## Git history note
 
-The repository had a single local commit (no remote, nothing pushed) whose tree included private
-derived materials. Because nothing was ever published, the safe cleanup is to **re-initialize
-local history** so the sensitive content never appears in any commit. This is done locally only; no
-remote history is rewritten. If you later discover the old commit was pushed somewhere, treat the
-content as exposed and rotate accordingly (it was not pushed from here).
+Local history was re-initialized earlier so no private/derived material ever entered a commit, then
+commit authorship was corrected to `Sheikh Thanbir Alam <sk.tamim56@gmail.com>`. The remote
+`ThanbirTamim/gobeshonalab-agent` now holds that clean history (`main`), and a full blob scan of
+history shows no private-source identifiers. Nothing further is required here.
+
+## Release status
+
+- GitHub repo + `main`: **pushed**, CI green.
+- Git tag `v0.1.0`: **does not exist yet**.
+- GitHub Release: **not created yet**.
+- npm publish: **not done** (`@gobeshonalab/agent` is unpublished).
 
 ## Next concrete action
 
-1. Review `docs/publishing.md` and confirm the npm scope `@gobeshonalab` availability/ownership.
-2. Create the GitHub repo `gobeshonalab/gobeshonalab-agent`, push `main`, tag `v0.1.0`.
-3. `npm login` and `npm publish --access public` when ready.
+1. Decide the npm scope: create/join the `gobeshonalab` npm org, or rename `name` in `package.json`
+   to a scope you own (GitHub owner is `ThanbirTamim`, which does not match `@gobeshonalab`).
+2. Tag and release: `git tag -a v0.1.0 -m "GobeshonaLabAgent 0.1.0" && git push origin v0.1.0`, then
+   create a GitHub Release from the tag.
+3. When ready: `npm login` and `npm publish --access public`.
+
+See `docs/publishing.md` for the full checklist. None of the above runs automatically.

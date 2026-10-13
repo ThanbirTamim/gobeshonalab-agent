@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/gobeshonalab/gobeshonalab-agent/config/research-project.schema.json",
+  "$id": "https://github.com/ThanbirTamim/gobeshonalab-agent/config/research-project.schema.json",
   "title": "Research Project Configuration",
   "description": "Researcher-driven contract that drives the GobeshonaLabAgent toolkit. The researcher owns every field here; skills must never silently invent or change research framing, results, or the permitted source set.",
   "type": "object",

@@ -46,11 +46,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gobeshonalab/gobeshonalab-agent.git"
+    "url": "git+https://github.com/ThanbirTamim/gobeshonalab-agent.git"
   },
-  "homepage": "https://github.com/gobeshonalab/gobeshonalab-agent#readme",
+  "homepage": "https://github.com/ThanbirTamim/gobeshonalab-agent#readme",
   "bugs": {
-    "url": "https://github.com/gobeshonalab/gobeshonalab-agent/issues"
+    "url": "https://github.com/ThanbirTamim/gobeshonalab-agent/issues"
   },
   "devDependencies": {
     "typescript": "^5.4.0",

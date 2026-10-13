@@ -6,7 +6,7 @@ material.
 ## 1. Get the toolkit and build it
 
 ```bash
-git clone https://github.com/gobeshonalab/gobeshonalab-agent
+git clone https://github.com/ThanbirTamim/gobeshonalab-agent
 cd gobeshonalab-agent
 npm install && npm run build
 ```
