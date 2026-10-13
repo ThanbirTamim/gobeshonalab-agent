@@ -56,11 +56,11 @@ cp -r skills/figure-planner /path/to/your/.claude/skills/
 ## Option D — npm (optional, once published)
 
 ```bash
-npx @gobeshonalab/agent list
-npx @gobeshonalab/agent install all --target ./.claude/skills
+npx @thanbirtamim/gobeshonalab-agent list
+npx @thanbirtamim/gobeshonalab-agent install all --target ./.claude/skills
 ```
 
-> The npm package `@gobeshonalab/agent` is the project's intended identity; it is not yet published.
+> The npm package `@thanbirtamim/gobeshonalab-agent` is the project's intended identity; it is not yet published.
 > See [`publishing.md`](./publishing.md).
 
 ## Updating and removing skills

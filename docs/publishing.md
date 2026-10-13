@@ -12,21 +12,19 @@ actions and their prerequisites — run them yourself.
 |------|-------|--------|
 | Product name | `GobeshonaLabAgent` | chosen |
 | GitHub repo | `ThanbirTamim/gobeshonalab-agent` | created & pushed, CI passing |
-| npm package | `@gobeshonalab/agent` | **not published** (name is free; see scope note) |
+| npm package | `@thanbirtamim/gobeshonalab-agent` | **not published** (scope = your npm username) |
 | CLI command | `gobeshona` | chosen (declared in `package.json` `bin`) |
 | Tagline | `From Research Ideas to Evidence-Backed Papers.` | chosen |
 
-The npm package `@gobeshonalab/agent` is unpublished: `npm view @gobeshonalab/agent` returns 404 and
-no packages exist under the `@gobeshonalab` scope. **Scope-ownership note:** the GitHub owner is
-`ThanbirTamim`, but the package uses the `@gobeshonalab` npm scope. A scoped package can only be
-published if that scope is your npm **username** or an npm **org** you belong to. Before publishing,
-either create/join the `gobeshonalab` npm org, or change `name` in `package.json` to a scope you own
-(e.g. `@thanbirtamim/gobeshonalab-agent` or an unscoped name). Confirm with:
+The npm package `@thanbirtamim/gobeshonalab-agent` is not yet published: `npm view
+@thanbirtamim/gobeshonalab-agent` returns 404 (meaning no published versions exist — not a guarantee
+that npm will accept the name at publish time). The package uses the `@thanbirtamim` scope, which
+matches the npm username `thanbirtamim`; publishing to your own username scope is permitted for that
+account. Confirm before publishing:
 
 ```bash
-npm view @gobeshonalab/agent          # 404 => name is free
-npm whoami                            # your npm username
-npm org ls gobeshonalab 2>/dev/null   # confirms you own/belong to the scope
+npm whoami                                   # expect: thanbirtamim
+npm view @thanbirtamim/gobeshonalab-agent    # 404 => no published versions yet
 ```
 
 ## Pre-flight checklist (private-content safe-release)
@@ -98,8 +96,7 @@ Update `CHANGELOG.md` for every release.
 ## What requires your credentials / approval
 
 - Creating the `v0.1.0` tag + GitHub Release (your GitHub account).
-- Publishing to npm: an npm account, ownership of the chosen scope, and `npm login` (your npm account).
-- Deciding the final package name/scope if you do not own `@gobeshonalab`.
+- Publishing to npm: `npm login` as `thanbirtamim` and `npm publish --access public` (your npm account).
 
 The repository and `main` branch are already pushed; tagging, the Release, and npm publish have **not**
 happened and will not happen automatically.

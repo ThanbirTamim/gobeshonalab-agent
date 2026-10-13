@@ -106,7 +106,7 @@ Node's built-in `node:test` runner (no external test framework needed):
 3. **Claude Code plugin + marketplace:** `.claude-plugin/` manifests; `/plugin marketplace add` then
    `/plugin install gobeshonalab-agent@gobeshonalab-agent`.
 4. **GitHub:** public repo (this).
-5. **npm CLI:** `npx @gobeshonalab/agent ...` (optional).
+5. **npm CLI:** `npx @thanbirtamim/gobeshonalab-agent ...` (optional).
 6. **Other agents:** documented adapters in `docs/adapters.md`.
 
 ## 9. Build order (executed)

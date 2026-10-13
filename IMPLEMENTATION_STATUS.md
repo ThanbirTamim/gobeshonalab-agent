@@ -11,7 +11,7 @@ Last updated: release-readiness pass (repo pushed, CI green, URLs corrected to `
 |------|-------|
 | Product name | GobeshonaLabAgent |
 | GitHub repo | `ThanbirTamim/gobeshonalab-agent` — pushed to `main`, CI passing |
-| npm package | `@gobeshonalab/agent` — **not published** (404 = free); scope ownership must be arranged |
+| npm package | `@thanbirtamim/gobeshonalab-agent` — **not published** (scope matches npm user `thanbirtamim`) |
 | CLI command | `gobeshona` (`package.json` `bin`) |
 | Plugin + marketplace name | `gobeshonalab-agent` |
 
@@ -76,14 +76,12 @@ history shows no private-source identifiers. Nothing further is required here.
 - GitHub repo + `main`: **pushed**, CI green.
 - Git tag `v0.1.0`: **does not exist yet**.
 - GitHub Release: **not created yet**.
-- npm publish: **not done** (`@gobeshonalab/agent` is unpublished).
+- npm publish: **not done** (`@thanbirtamim/gobeshonalab-agent` is unpublished).
 
 ## Next concrete action
 
-1. Decide the npm scope: create/join the `gobeshonalab` npm org, or rename `name` in `package.json`
-   to a scope you own (GitHub owner is `ThanbirTamim`, which does not match `@gobeshonalab`).
-2. Tag and release: `git tag -a v0.1.0 -m "GobeshonaLabAgent 0.1.0" && git push origin v0.1.0`, then
+1. Tag and release: `git tag -a v0.1.0 -m "GobeshonaLabAgent 0.1.0" && git push origin v0.1.0`, then
    create a GitHub Release from the tag.
-3. When ready: `npm login` and `npm publish --access public`.
+2. When ready: `npm login` (as `thanbirtamim`) and `npm publish --access public`.
 
 See `docs/publishing.md` for the full checklist. None of the above runs automatically.
