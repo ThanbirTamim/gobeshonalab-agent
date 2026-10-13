@@ -1,5 +1,6 @@
 # GobeshonaLabAgent
 
+[![npm version](https://img.shields.io/npm/v/@thanbir-tamim/gobeshonalab-agent.svg)](https://www.npmjs.com/package/@thanbir-tamim/gobeshonalab-agent)
 [![CI](https://github.com/ThanbirTamim/gobeshonalab-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/ThanbirTamim/gobeshonalab-agent/actions/workflows/ci.yml)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](./LICENSE)
 
