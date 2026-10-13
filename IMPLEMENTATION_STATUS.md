@@ -11,7 +11,7 @@ Last updated: release-readiness pass (repo pushed, CI green, URLs corrected to `
 |------|-------|
 | Product name | GobeshonaLabAgent |
 | GitHub repo | `ThanbirTamim/gobeshonalab-agent` — pushed to `main`, CI passing |
-| npm package | `@thanbirtamim/gobeshonalab-agent` — **not published** (scope matches npm user `thanbirtamim`) |
+| npm package | `@thanbir-tamim/gobeshonalab-agent` — **not published** (scope matches npm user `thanbir-tamim`) |
 | CLI command | `gobeshona` (`package.json` `bin`) |
 | Plugin + marketplace name | `gobeshonalab-agent` |
 
@@ -76,12 +76,12 @@ history shows no private-source identifiers. Nothing further is required here.
 - GitHub repo + `main`: **pushed**, CI green.
 - Git tag `v0.1.0`: **does not exist yet**.
 - GitHub Release: **not created yet**.
-- npm publish: **not done** (`@thanbirtamim/gobeshonalab-agent` is unpublished).
+- npm publish: **not done** (`@thanbir-tamim/gobeshonalab-agent` is unpublished).
 
 ## Next concrete action
 
 1. Tag and release: `git tag -a v0.1.0 -m "GobeshonaLabAgent 0.1.0" && git push origin v0.1.0`, then
    create a GitHub Release from the tag.
-2. When ready: `npm login` (as `thanbirtamim`) and `npm publish --access public`.
+2. When ready: `npm login` (as `thanbir-tamim`) and `npm publish --access public`.
 
 See `docs/publishing.md` for the full checklist. None of the above runs automatically.

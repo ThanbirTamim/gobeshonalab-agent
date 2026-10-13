@@ -47,18 +47,18 @@ node dist/cli/index.js doctor
 - **Remove:** skills are plain folders — delete the folder (e.g. `rm -rf ./.claude/skills/<name>`).
   A dedicated `uninstall` command is on the roadmap.
 
-Once published to npm, the same commands are available as `gobeshona ...` or `npx @thanbirtamim/gobeshonalab-agent ...`.
+Once published to npm, the same commands are available as `gobeshona ...` or `npx @thanbir-tamim/gobeshonalab-agent ...`.
 
 ## C. CLI / npm
 
 The installed executable is **`gobeshona`**. Proposed npm usage (package not yet published):
 
 ```bash
-npx @thanbirtamim/gobeshonalab-agent --help
-npx @thanbirtamim/gobeshonalab-agent list
-npx @thanbirtamim/gobeshonalab-agent new my-paper
-npx @thanbirtamim/gobeshonalab-agent install all --target .claude/skills
-npx @thanbirtamim/gobeshonalab-agent validate research-project.json
+npx @thanbir-tamim/gobeshonalab-agent --help
+npx @thanbir-tamim/gobeshonalab-agent list
+npx @thanbir-tamim/gobeshonalab-agent new my-paper
+npx @thanbir-tamim/gobeshonalab-agent install all --target .claude/skills
+npx @thanbir-tamim/gobeshonalab-agent validate research-project.json
 ```
 
 All commands provide argument validation, actionable error messages, safe path handling, overwrite

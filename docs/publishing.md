@@ -12,19 +12,19 @@ actions and their prerequisites — run them yourself.
 |------|-------|--------|
 | Product name | `GobeshonaLabAgent` | chosen |
 | GitHub repo | `ThanbirTamim/gobeshonalab-agent` | created & pushed, CI passing |
-| npm package | `@thanbirtamim/gobeshonalab-agent` | **not published** (scope = your npm username) |
+| npm package | `@thanbir-tamim/gobeshonalab-agent` | **not published** (scope = your npm username) |
 | CLI command | `gobeshona` | chosen (declared in `package.json` `bin`) |
 | Tagline | `From Research Ideas to Evidence-Backed Papers.` | chosen |
 
-The npm package `@thanbirtamim/gobeshonalab-agent` is not yet published: `npm view
-@thanbirtamim/gobeshonalab-agent` returns 404 (meaning no published versions exist — not a guarantee
-that npm will accept the name at publish time). The package uses the `@thanbirtamim` scope, which
-matches the npm username `thanbirtamim`; publishing to your own username scope is permitted for that
+The npm package `@thanbir-tamim/gobeshonalab-agent` is not yet published: `npm view
+@thanbir-tamim/gobeshonalab-agent` returns 404 (meaning no published versions exist — not a guarantee
+that npm will accept the name at publish time). The package uses the `@thanbir-tamim` scope, which
+matches the npm username `thanbir-tamim`; publishing to your own username scope is permitted for that
 account. Confirm before publishing:
 
 ```bash
-npm whoami                                   # expect: thanbirtamim
-npm view @thanbirtamim/gobeshonalab-agent    # 404 => no published versions yet
+npm whoami                                   # expect: thanbir-tamim
+npm view @thanbir-tamim/gobeshonalab-agent    # 404 => no published versions yet
 ```
 
 ## Pre-flight checklist (private-content safe-release)
@@ -96,7 +96,7 @@ Update `CHANGELOG.md` for every release.
 ## What requires your credentials / approval
 
 - Creating the `v0.1.0` tag + GitHub Release (your GitHub account).
-- Publishing to npm: `npm login` as `thanbirtamim` and `npm publish --access public` (your npm account).
+- Publishing to npm: `npm login` as `thanbir-tamim` and `npm publish --access public` (your npm account).
 
 The repository and `main` branch are already pushed; tagging, the Release, and npm publish have **not**
 happened and will not happen automatically.

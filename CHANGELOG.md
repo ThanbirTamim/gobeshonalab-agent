@@ -30,7 +30,7 @@ All notable changes to this project are documented here. The format is based on
 
 ### Notes
 - The project name is GobeshonaLabAgent; the installed CLI command is `gobeshona`; the intended npm
-  package is `@thanbirtamim/gobeshonalab-agent` (not yet published).
+  package is `@thanbir-tamim/gobeshonalab-agent` (not yet published).
 
 [Unreleased]: https://github.com/ThanbirTamim/gobeshonalab-agent/compare/v0.1.0...HEAD
 [0.1.0]: https://github.com/ThanbirTamim/gobeshonalab-agent/releases/tag/v0.1.0

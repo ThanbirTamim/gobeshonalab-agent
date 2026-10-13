@@ -55,10 +55,10 @@ point it at your `research-project.json`. Full walkthrough: [`docs/quickstart.md
 Once published to npm you will be able to use it without cloning:
 
 ```bash
-npx @thanbirtamim/gobeshonalab-agent list
-npx @thanbirtamim/gobeshonalab-agent new my-paper
-npx @thanbirtamim/gobeshonalab-agent install all --target .claude/skills
-npx @thanbirtamim/gobeshonalab-agent validate research-project.json
+npx @thanbir-tamim/gobeshonalab-agent list
+npx @thanbir-tamim/gobeshonalab-agent new my-paper
+npx @thanbir-tamim/gobeshonalab-agent install all --target .claude/skills
+npx @thanbir-tamim/gobeshonalab-agent validate research-project.json
 ```
 
 The installed executable is **`gobeshona`** (e.g. `gobeshona list`).
